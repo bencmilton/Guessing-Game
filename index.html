@@ -1,62 +1,69 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Guessing Game</title>
-		<link href="bootstrap.min.css" rel="stylesheet" media="screen">
-		<script type="text/javascript" src="script.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<header="page-header">
-				<h1></h1>
-			</header>
+	<html>
+		<head>
+			<title>Guessing Game</title>
+			<link href="bootstrap.min.css" rel="stylesheet" media="screen">
+			<link rel="stylesheet" href="alertify.core.css">
+			<link rel="stylesheet" href="alertify.default.css">
 
-<!--Jumbotron title-->
+			<script type="text/javascript" src="script.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script src=" submit_jquery.js"></script>
+			
+		</head>
 
-			<div class="jumbotron">
-			  	<h1>This is the Guessing Game!</h1>
+		<body>
+			<div align="center" class="container" id=""> <br />
+
+<!-- guessing zone/jumbotron header -->
+
+			<div class="jumbotron" id="jumbo">
+			  	<h1>The Guessing Game!</h1>
 			  		<p class="lead">Please pick a number between 1 and 100</p>
-			  		<div class="row">
+			  		
 
-<!--"Pick a number" input bar-->
+<!-- guessing field bar and "Submit" button-->
+				<fieldset>
+					<div class="row">
+					  	<div class="col-lg-6">
+					    	<div class="input-group" align="center">
+					      		<input type="text" id="guess" class="form-control" placeholder="Enter a number...">
+					      			<span class="input-group-btn">
+					        			<button class="btn btn-success" type="button" onclick="yourGuess()" value="Submit">Submit</button>
+					      			</span> <br />					      
+					    	</div><!-- /input-group -->
+					  	</div><!-- /.col-lg-6 -->
+					 
+<!-- BUTTON GROUP-->
+				<nav>
+					<ul class="pager">
+						<div class="btn-group" role="group" align="center" aria-label="...">
 
-			<form name="myform" action="" method="get">
-				<div class="col-lg-6">
-				    <div class="input-group">
-				      	<input type="number" name="inputbox" min="1" max="100" class="form-control" placeholder="Number between 1 and 100...">
-				      		<span class="input-group-btn" value="click" onclick="testResults(this.form)">
-				        		<button class="btn btn-default" type="button">Go!</button>
-				      		</span>
-				    </div><!-- /input-group -->
-				 </div><!-- /.col-lg-6 -->
-			</form>
-			</div>
-			<p>
-			
-<!--"New Game" button-->
+<!-- "new game" button -->
+							<li><input type="button" class="btn btn-info btn-lg" onclick="newGame()" value="New Game" /></li>
 
-			<div class="btn-group btn-group-justified" role="group" aria-label="...">
-				<div class="btn-group" role="group">
-					<button type="button" class="btn btn-success btn-lg" onclick="new_game()">New Game</button>
-			  	</div>
+<!-- "cheat" button -->
+						 	<li><input id="cheat" type="button" class="btn btn-danger btn-lg" value="I Give Up!" onclick="showNumberToGuess()" />
+								
+								<div id="cheatShow" style="display: none;">
+									<input id="numberToGuess" type="button" class="btn btn-warning btn-sm" />
+									<label for="numberToGuess">Answer</label>
+								</div> <!-- id="cheatShow" -->
+							</li>
+						</div> <!-- div class="btn-group" -->
+					</ul>	
+				</nav>
+			</fieldset>
 
-<!--"I give up" button-->
-			  	<div class="btn-group" role="group">
-			    	<button type="button" class="btn btn-danger btn-lg" onclick="i_give_up()">I Give Up!</button>
-			  	
+<!-- "guess history" field -->			
+			<fieldset>
+				 <p class="lead"> Guess History </p>
+				 	<textarea id="output" name="output" rows="5" style="width: 60%;"></textarea>
+			</fieldset>
 
-			  	</div>
-			</div>
-				
-				</p>
-			</p>
-		</div>
-			<!-- /.row -->
-		
-
-			
-		
-
-		</div>
-	</body>
-</html>
+					</div> <!-- div class="row" -->
+				</div> <!-- div class="jumbotron" id="jumbo" -->
+			</div> <!-- div align="center" class="container" -->
+		</body>
+		<script src="alertify.min.js"></script>
+	</html>
