@@ -2,13 +2,13 @@
 	<html>
 		<head>
 			<title>Guessing Game</title>
-			<link href="bootstrap.min.css" rel="stylesheet" media="screen">
-			<link rel="stylesheet" href="alertify.core.css">
-			<link rel="stylesheet" href="alertify.default.css">
+			<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+			<link rel="stylesheet" href="css/alertify.core.css">
+			<link rel="stylesheet" href="css/alertify.default.css">
 
-			<script type="text/javascript" src="script.js"></script>
+			<script type="text/javascript" src="js/script.js"></script>
 			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-			<script src=" submit_jquery.js"></script>
+			<script src=" submit_jquery.js"></script>	
 			
 		</head>
 
@@ -29,7 +29,7 @@
 					    	<div class="input-group" align="center">
 					      		<input type="text" id="guess" class="form-control" placeholder="Enter a number...">
 					      			<span class="input-group-btn">
-					        			<button class="btn btn-success" type="button" onclick="yourGuess()" value="Submit">Submit</button>
+					        			<button id="guess_button" class="btn btn-success" type="button" onclick="yourGuess()" value="Submit">Submit</button>
 					      			</span> <br />					      
 					    	</div><!-- /input-group -->
 					  	</div><!-- /.col-lg-6 -->
@@ -65,5 +65,5 @@
 				</div> <!-- div class="jumbotron" id="jumbo" -->
 			</div> <!-- div align="center" class="container" -->
 		</body>
-		<script src="alertify.min.js"></script>
+		<script src="js/alertify.min.js"></script>
 	</html>

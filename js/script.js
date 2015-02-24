@@ -125,7 +125,12 @@ function newGame () {
 //Random number generator (1-100)
 var numToGuess = Math.floor(Math.random()*100);
 
-
+$('#guess').keypress(function (e) {
+  if (e.which == 13) {
+    $('#guess_button').submit();
+    return false;    //<---- Add this line
+  }
+});
 
 
 
